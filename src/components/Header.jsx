@@ -1,12 +1,12 @@
 import * as React from 'react';
 import "@fontsource/saira-condensed/"
 
-import {AppBar, Container, Button, Toolbar,Typography, Box, MenuItem, IconButton, Menu} from '@mui/material';
-import {Menu as MenuIcon, Adb }from '@mui/icons-material';
+import {AppBar, Container, Button, Toolbar,Typography, Box, MenuItem, IconButton, Menu, Switch} from '@mui/material';
+import {Menu as MenuIcon, Adb, DarkMode, LightMode}from '@mui/icons-material';
 
 
 
-function Header(){
+function Header({themeHandler,mode}){
     const pages = ['Services', 'Tires', 'Fleet Services','Financing', 'Coupons','Customer Reviews', 'Contact Us'];
     const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -28,7 +28,7 @@ function Header(){
   };
     return(
     <AppBar position='static' color='primary'>
-<Container maxWidth="xl">
+<Container maxWidth="lg">
 <Toolbar disableGutters>
 <Typography
             variant="h1"
@@ -46,9 +46,29 @@ function Header(){
               fontSize:'3rem'
             }}
           >
-            LOGO
+            BCYTYTIRES
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          
+          <Adb sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            href=""
+            sx={{
+              mr: 2,
+              display: { xs: 'flex', md: 'none' },
+              flexGrow: 1,
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+          >
+            BCYTYTIRES
+          </Typography>
+          <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -84,36 +104,18 @@ function Header(){
               ))}
             </Menu>
           </Box>
-          <Adb sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            LOGO
-          </Typography>
-          <Box sx={{flexGrow:1}}></Box>
+          <Box sx={{flexGrow:1, display:{xs:'none', md:'flex'}}}></Box>
           <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' }  }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block', fontFamily:'Saira Condensed', fontWeight:600,fontSize:20 }}
+                sx={{ my: 2, color: 'white', display: 'block', fontFamily:'Saira Condensed', fontWeight:600,fontSize:15 }}
               >
                 {page}
               </Button>
             ))}
+             <Button sx={{my:2, mx:2, color: 'white',}} onClick={()=>themeHandler()}>{mode ?<DarkMode/>:<LightMode/>}</Button>
           </Box>
 </Toolbar>
 </Container>
