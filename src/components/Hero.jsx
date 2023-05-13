@@ -20,7 +20,7 @@ function Hero() {
         backgroundImage: "url(/car-7862030_1920.jpg)",
       }}
     >
-      <Container maxWidth="md" sx={{ height: "100%" }}>
+      <Container maxWidth="lg" sx={{ height: "100%" }}>
         <Grid
           sx={{ height: "100%" }}
           container

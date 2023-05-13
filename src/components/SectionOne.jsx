@@ -12,15 +12,15 @@ let itemData=['/public/computerised-diagnostic.jpg','/public/new-rims-sarasota-2
 
 function SectionOne() {
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="lg">
       <Grid
         sx={{ height: "100%" }}
         container
         justifyContent={{ md: "space-between", xs: "center" }}
-        alignItems="center"
+        
       >
-        <Grid item sm={9} xs={12}>
-        <ImageList variant="masonry" cols={3} gap={8}>
+        <Grid item sm={6} xs={12}>
+        <ImageList variant="masonry" cols={2} gap={8}>
   {itemData.map((item) => (
     <ImageListItem key={item}>
       <img
@@ -32,6 +32,14 @@ function SectionOne() {
     </ImageListItem>
   ))}
 </ImageList>
+        </Grid>
+        <Grid item sm={5} xs={12}>
+          <Container sx={{padding:'5%'}}>
+        <Typography component="h5" variant="h5">
+        Buy Now, Pay Later Prequalify in seconds B'City Tires Services has partnered with Acima to offer you financing of your wheel and tire purchases and other services. Buy your aftermarket wheels and Tires, Biggest and Best Selection of Custom Wheels and other items for your car, truck and SUV.
+                Detailing.
+              </Typography>
+              </Container>
         </Grid>
       </Grid>
     </Container>
