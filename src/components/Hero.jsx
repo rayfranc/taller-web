@@ -38,7 +38,7 @@ function Hero() {
               >
                 Get Instant <span style={{'color':'#23c9ff'}}>Savings</span> on <span style={{'color':'#23c9ff'}}>Auto Services</span>!
               </Typography>
-              <Typography component="h3" variant="h5" sx={{fontSize:{xs:'2vh',md:'3vh'}}} fontFamily="Saira Condensed">
+              <Typography component="p" variant="h5" sx={{fontSize:{xs:'2vh',md:'3vh'}}} fontFamily="Saira Condensed">
                 Welcome to Bcity Tire Service and Sales, Inc. based in
                 Bradenton, servicing Manatee and Sarasota Counties. We are the
                 #1 Used & New Tires supplier in Bradenton with 4 Service
