@@ -1,10 +1,7 @@
 import {
   Container,
-  Paper,
   Grid,
   Typography,
-  Box,
-  SvgIcon,
   ImageList,
   ImageListItem
 } from "@mui/material";

@@ -2,9 +2,7 @@ import {
   Container,
   Paper,
   Grid,
-  Typography,
-  Box,
-  SvgIcon,
+  Typography
 } from "@mui/material";
 import "./Hero.css";
 import QualityIcon from "../assets/QualityIcon";

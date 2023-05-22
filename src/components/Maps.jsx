@@ -4,7 +4,6 @@ import React, { useRef, useState, createRef,useEffect,useMemo,useCallback } from
 import { MapContainer,TileLayer,Marker,Popup} from "react-leaflet"
 import { LocationOn,Call } from "@mui/icons-material"
 import './Maps.css'
-import ExternalStateExample from "./MapController"
 
 const shadowKeyframes=keyframes`
 0% {

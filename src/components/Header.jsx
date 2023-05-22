@@ -1,31 +1,24 @@
 import * as React from 'react';
 import "@fontsource/saira-condensed/"
 
-import {AppBar, Container, Button, Toolbar,Typography, Box, MenuItem, IconButton, Menu, Switch} from '@mui/material';
-import {Menu as MenuIcon, Adb, DarkMode, LightMode}from '@mui/icons-material';
+import {AppBar, Container, Button, Toolbar,Typography, Box, MenuItem, IconButton, Menu} from '@mui/material';
+import {Menu as MenuIcon}from '@mui/icons-material';
 
 
 
 function Header({themeHandler,mode}){
     const pages = ['Services', 'Tires', 'Fleet Services','Financing', 'Coupons','Customer Reviews', 'Contact Us'];
-    const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
     const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
   };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+
     return(
     <AppBar position='absolute' color='primary'>
 <Container >
