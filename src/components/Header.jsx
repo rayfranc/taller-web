@@ -20,7 +20,7 @@ function Header({themeHandler,mode}){
 
 
     return(
-    <AppBar position='absolute' color='primary'>
+    <AppBar position='absolute'>
 <Container >
 <Toolbar disableGutters>
         <img style={{'height':'10vh'}}

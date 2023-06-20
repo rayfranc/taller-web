@@ -5,6 +5,7 @@ import './App.css'
 import Hero from './components/Hero'
 import SectionOne from './components/SectionOne'
 import Maps from './components/Maps'
+import Footer from './components/Footer'
 
 function App() {
   const [theme, setTheme]=useState(createTheme({
@@ -25,6 +26,7 @@ function App() {
     <Hero/>
     <SectionOne/>
     <Maps/>
+    <Footer/>
     </ThemeProvider>
     </>
   )

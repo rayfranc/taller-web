@@ -73,10 +73,10 @@ const [map, setMap] = useState(null)
     [],
   )
     const locations=[
-    {adress:'5640 15th St.E., Bradenton, Florida 34208',phoneNumber:9416811159,pos:[27.44066, -82.54703]},
-    {adress:'3523 15th St.E., Bradenton, Florida 34208',phoneNumber:9417083220,pos:[27.46785, -82.54634]},
-    {adress:'5507 14th St.W., Bradenton, Florida 34207',phoneNumber:9415651977,pos:[27.44364, -82.57505]},
-    {adress:'3501 14th St.W., Bradenton, Florida 34205',phoneNumber:9412015037,pos:[27.46993, -82.57498]}
+    {adress:'5640 15th St.E., Bradenton, Florida 34208',phoneNumber:'941-681-1159',pos:[27.44066, -82.54703]},
+    {adress:'3523 15th St.E., Bradenton, Florida 34208',phoneNumber:'941-708-3220',pos:[27.46785, -82.54634]},
+    {adress:'5507 14th St.W., Bradenton, Florida 34207',phoneNumber:'941-565-1977',pos:[27.44364, -82.57505]},
+    {adress:'3501 14th St.W., Bradenton, Florida 34205',phoneNumber:'941-201-5037',pos:[27.46993, -82.57498]}
 ]
 
 const handleClick=(e)=>{
@@ -86,7 +86,7 @@ map.setView(locations[e].pos,16)
 
      
   return (
-    <Container maxWidth='lg'>
+    <Container maxWidth='lg' sx={{marginBottom:'1vh'}}>
         
 
     <Paper elevation={3} sx={{ padding: "1%", height:'100%', backgroundColor:'#eeeee'} }>
