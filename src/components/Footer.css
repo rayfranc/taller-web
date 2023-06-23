@@ -20,7 +20,7 @@
 /* las de la pseudo clase hover */
 .icon-social:hover{
     transition: 1s;
-    transform: translateX(-3vh);
+    transform: translateX(-1vh);
 }
 
 .icon-social:hover ~ .link-social{

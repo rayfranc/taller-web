@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
 import { createTheme,ThemeProvider} from '@mui/material'
-import Header from './components/Header'
-import './App.css'
-import Hero from './components/Hero'
-import SectionOne from './components/SectionOne'
-import Maps from './components/Maps'
-import Footer from './components/Footer'
+import Header from '../components/Header'
+import '../styles/Home.css'
+import Hero from '../components/Hero'
+import SectionOne from '../components/SectionOne'
+import Maps from '../components/Maps'
+import Footer from '../components/Footer'
 
-function App() {
+function Home() {
   const [theme, setTheme]=useState(createTheme({
     palette:{
       mode: 'dark'
@@ -32,4 +32,4 @@ function App() {
   )
 }
 
-export default App
+export default Home

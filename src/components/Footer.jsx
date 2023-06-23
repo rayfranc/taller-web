@@ -24,10 +24,11 @@ function Footer() {
   return (
     <Paper sx={{ padding: '5vh' }} color='primary'>
       <Grid
+      maxWidth={'lg'}
         sx={{ height: "100%" }}
         container
         justifyContent={'space-between'}
-        alignItems="center"
+        margin={'auto'}
       >
         <Grid item sm={3} xs={12}>
           <img style={{ 'height': '8vh' }}
@@ -53,6 +54,45 @@ function Footer() {
           >
             © 2023 Big City Tires
           </Typography>
+        </Grid>
+        <Grid item >
+          <List>
+            <ListItem>
+              <ListItemText>
+                <Typography
+                  fontWeight={600}
+                  component="h5"
+                  variant="h5"
+                  fontFamily="Saira Condensed">
+                  Contact<span style={{ 'color': '#23c9ff' }}> Us</span>
+                </Typography>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemAvatar>
+                <ContactPhone />
+              </ListItemAvatar>
+              <ListItemText primary="941-681-1159" />
+            </ListItem>
+            <ListItem>
+              <ListItemAvatar>
+                <ContactPhone />
+              </ListItemAvatar>
+              <ListItemText primary="941-708-3220" />
+            </ListItem>
+            <ListItem>
+              <ListItemAvatar>
+                <ContactPhone />
+              </ListItemAvatar>
+              <ListItemText primary="941-565-1977" />
+            </ListItem>
+            <ListItem>
+              <ListItemAvatar>
+                <ContactPhone />
+              </ListItemAvatar>
+              <ListItemText primary="941-201-5037" />
+            </ListItem>
+          </List>
         </Grid>
         <Grid item>
           <List>
@@ -84,27 +124,6 @@ function Footer() {
                 <WhatsApp />
               </ListItemAvatar>
               <ListItemText primary="941-681-1159" className="link-social" />
-            </ListItem>
-          </List>
-        </Grid>
-        <Grid item >
-          <List>
-            <ListItem>
-              <ListItemText>
-                <Typography
-                  fontWeight={600}
-                  component="h5"
-                  variant="h5"
-                  fontFamily="Saira Condensed">
-                  Contact<span style={{ 'color': '#23c9ff' }}> Us</span>
-                </Typography>
-              </ListItemText>
-            </ListItem>
-            <ListItem>
-              <ListItemAvatar>
-                <ContactPhone />
-              </ListItemAvatar>
-              <ListItemText primary="941-681-1159" />
             </ListItem>
           </List>
         </Grid>
