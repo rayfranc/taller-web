@@ -2,9 +2,7 @@ import {
   Container,
   Paper,
   Grid,
-  Typography,
-  Box,
-  SvgIcon,
+  Typography
 } from "@mui/material";
 import "./Hero.css";
 import QualityIcon from "../assets/QualityIcon";
@@ -20,7 +18,7 @@ function Hero() {
         backgroundImage: "url(/car-7862030_1920.jpg)",
       }}
     >
-      <Container maxWidth="md" sx={{ height: "100%" }}>
+      <Container maxWidth="lg" sx={{ height: "100%" }}>
         <Grid
           sx={{ height: "100%" }}
           container
@@ -34,10 +32,11 @@ function Hero() {
                 variant="h3"
                 fontWeight={600}
                 fontFamily="Saira Condensed"
+                sx={{fontSize:{xs:'3.5vh',md:'5vh'}}}
               >
-                Get Instant Savings on Auto Services!
+                Get Instant <span style={{'color':'#23c9ff'}}>Savings</span> on <span style={{'color':'#23c9ff'}}>Auto Services</span>!
               </Typography>
-              <Typography component="h3" variant="h5">
+              <Typography component="p" variant="h5" sx={{fontSize:{xs:'2vh',md:'3vh'}}} fontFamily="Saira Condensed">
                 Welcome to Bcity Tire Service and Sales, Inc. based in
                 Bradenton, servicing Manatee and Sarasota Counties. We are the
                 #1 Used & New Tires supplier in Bradenton with 4 Service
@@ -48,7 +47,7 @@ function Hero() {
                 Detailing.
               </Typography>
               <br/>
-              <Typography component="h3" variant="h5">
+              <Typography component="h3" variant="h5" sx={{fontSize:{xs:'2vh',md:'3vh'}}}  fontFamily="Saira Condensed"  >
                 We do General Mechanical work on Motorcycles and also both
                 Domestic and European cars. We specialize on European cars such
                 as BMW, Mercedes Benz etc.
@@ -60,7 +59,7 @@ function Hero() {
               <Grid item>
                 <Paper elevation={3} sx={{ maxHeight: "12vh", width: "12vh" }}>
                   <QualityIcon
-                    sx={{ width: "10vh", height: "10vh", margin: "10%" }}
+                    sx={{ width: "10vh", height: "10vh", margin: "10%"}}
                   />
                 </Paper>
               </Grid>

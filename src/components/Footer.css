@@ -1,0 +1,29 @@
+.icon-social{
+    transition: 1s;
+    transform: translateX(+3vh);
+}
+
+.link-social{
+    opacity: 0;
+    transition: 1s;
+}
+/* las del evento onClick */
+.icon-social-mostrar{
+    transition: 1s;
+    transform: translateX(-3vh);
+}
+
+.icon-social-mostrar ~ .link-social{
+    opacity: 1;
+    transition: 1s;
+}
+/* las de la pseudo clase hover */
+.icon-social:hover{
+    transition: 1s;
+    transform: translateX(-1vh);
+}
+
+.icon-social:hover ~ .link-social{
+    opacity: 1;
+    transition: 1s;
+}

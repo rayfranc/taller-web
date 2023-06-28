@@ -1,6 +1,6 @@
 .section-hero{
     height: 90vh;
-    background-image: url(public/car-7862030_1920.jpg) ;
+    background-image: url(/car-7862030_1920.jpg) ;
     background-size: cover;
     background-position: center;
 }
