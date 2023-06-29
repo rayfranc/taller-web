@@ -73,7 +73,7 @@ function Header({ themeHandler, mode }) {
                 pages.map((page) => (
                   <MenuItem
                     key={page}>
-                    <NavLink key={page} className={({ isActive }) => `${isActive ? 'active' : 'navLink'}`} to={links[pages.indexOf(page)]}>
+                    <NavLink key={page} className={({ isActive }) => `navLink ${isActive ? 'active' : ''}`} to={links[pages.indexOf(page)]}>
                       <Button
                         sx={{ color: 'white', display: 'block', fontFamily: 'Saira Condensed', fontWeight: 600, fontSize: 15 }}>
                         {page}
@@ -96,7 +96,7 @@ function Header({ themeHandler, mode }) {
             ))} */}
             {
               pages.map((page) => (
-                <NavLink key={page} className={({ isActive }) => `${isActive ? 'active' : 'navLink'}`} to={links[pages.indexOf(page)]}>
+                <NavLink key={page} className={({ isActive }) => `navLink ${isActive ? 'active' : ''}`} to={links[pages.indexOf(page)]}>
                   <Button
                     key={page}
                     sx={{ my: 2, color: 'white', display: 'block', fontFamily: 'Saira Condensed', fontWeight: 600, fontSize: 15 }}>
