@@ -1,0 +1,7 @@
+.navLink{
+    text-decoration: none;
+}
+.active > button{
+    color: #23c9ff;
+    text-decoration: underline;
+}
