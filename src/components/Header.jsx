@@ -3,14 +3,16 @@ import "@fontsource/saira-condensed/"
 import './Header.css';
 import { NavLink } from 'react-router-dom';
 
-import { AppBar, Container, Button, Toolbar, Typography, Box, MenuItem, IconButton, Menu } from '@mui/material';
-import { Menu as MenuIcon } from '@mui/icons-material';
+import { AppBar, Container, Button, Toolbar, Box, MenuItem, IconButton, Menu } from '@mui/material';
+import { KeyboardArrowDown, Menu as MenuIcon } from '@mui/icons-material';
 
 
 
 function Header({ themeHandler, mode }) {
-  const pages = ['Home', 'Services', 'Tires', 'Fleet Services', 'Financing', 'Coupons', 'Customer Reviews', 'Contact Us'];
-  const links = ['/', '/wheel-alignment', '/tires', '/fleet-services', '/financing', '/coupons', '/customer-reviews', '/contact-us'];
+  const pages = ['Tires', 'Fleet Services', 'Financing', 'Coupons', 'Customer Reviews', 'Contact Us'];
+  const links = ['/tires', '/fleet-services', '/financing', '/coupons', '/customer-reviews', '/contact-us'];
+  const pagesDropdown = ['Wheel Alignment', 'Computer Diagnostics', 'Oil Change Gasoline & Diesel', 'General Mechanic', 'Motorcycle Repair', 'Brakes, Rims & Rotors', 'Commercial Semi Truck Washing'];
+  const linksDropdown = ['/wheel-alignment', '/computer-diagnostics', '/oil-change-gasoline-diesel', '/general-mechanic', '/motorcycle-repair', '/brakes-rims-rotors', '/commercial-semi-truck-washing'];
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -19,6 +21,16 @@ function Header({ themeHandler, mode }) {
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
+  };
+
+  const [dropdownNavbar, setDropdownNavbar] = React.useState(null);
+
+  const handleOpenDropdown = (event) => {
+    setDropdownNavbar(event.currentTarget);
+  };
+
+  const handleCloseDropdown = (event) => {
+    setDropdownNavbar(null);
   };
 
 
@@ -64,11 +76,40 @@ function Header({ themeHandler, mode }) {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {/* {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" >{page}</Typography>
-                </MenuItem>
-              ))} */}
+              <MenuItem>
+                <NavLink className={({ isActive }) => `navLink ${isActive ? 'active' : ''}`} to='/'>
+                  <Button
+                    sx={{ color: 'white', display: 'block', fontFamily: 'Saira Condensed', fontWeight: 600, fontSize: 15 }}>
+                    Home
+                  </Button>
+                </NavLink>
+              </MenuItem>
+              <MenuItem>
+                <Button
+                  onClick={handleOpenDropdown}
+                  endIcon={<KeyboardArrowDown />}
+                  sx={{ my: 2, color: 'white', fontFamily: 'Saira Condensed', fontWeight: 600, fontSize: 15 }}>
+                  Services
+                </Button>
+                <Menu
+                  id='menu-dropdown'
+                  anchorEl={dropdownNavbar}
+                  open={Boolean(dropdownNavbar)}
+                  onClose={handleCloseDropdown}
+                >
+                  {
+                    pagesDropdown.map((page) => (
+                      <NavLink key={page} className={({ isActive }) => `navLink ${isActive ? 'active' : ''}`} to={linksDropdown[pagesDropdown.indexOf(page)]}>
+                        <Button
+                          key={page}
+                          sx={{ my: 2, color: 'white', display: 'block', fontFamily: 'Saira Condensed', fontWeight: 600, fontSize: 15 }}>
+                          {page}
+                        </Button>
+                      </NavLink>
+                    ))
+                  }
+                </Menu>
+              </MenuItem>
               {
                 pages.map((page) => (
                   <MenuItem
@@ -85,15 +126,37 @@ function Header({ themeHandler, mode }) {
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}></Box>
           <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
-            {/* {pages.map((page) => (
+            <NavLink className={({ isActive }) => `navLink ${isActive ? 'active' : ''}`} to='/'>
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block', fontFamily: 'Saira Condensed', fontWeight: 600, fontSize: 15 }}
-              >
-                {page}
+                aria-controls='menu-dropdown'
+                sx={{ my: 2, color: 'white', display: 'block', fontFamily: 'Saira Condensed', fontWeight: 600, fontSize: 15 }}>
+                Home
               </Button>
-            ))} */}
+            </NavLink>
+            <Button
+              onClick={handleOpenDropdown}
+              endIcon={<KeyboardArrowDown />}
+              sx={{ my: 2, color: 'white', fontFamily: 'Saira Condensed', fontWeight: 600, fontSize: 15 }}>
+              Services
+            </Button>
+            <Menu
+              id='menu-dropdown'
+              anchorEl={dropdownNavbar}
+              open={Boolean(dropdownNavbar)}
+              onClose={handleCloseDropdown}
+            >
+              {
+                pagesDropdown.map((page) => (
+                  <NavLink key={page} className={({ isActive }) => `navLink ${isActive ? 'active' : ''}`} to={linksDropdown[pagesDropdown.indexOf(page)]}>
+                    <Button
+                      key={page}
+                      sx={{ my: 2, color: 'white', display: 'block', fontFamily: 'Saira Condensed', fontWeight: 600, fontSize: 15 }}>
+                      {page}
+                    </Button>
+                  </NavLink>
+                ))
+              }
+            </Menu>
             {
               pages.map((page) => (
                 <NavLink key={page} className={({ isActive }) => `navLink ${isActive ? 'active' : ''}`} to={links[pages.indexOf(page)]}>
@@ -103,8 +166,8 @@ function Header({ themeHandler, mode }) {
                     {page}
                   </Button>
                 </NavLink>
-              ))}
-
+              ))
+            }
           </Box>
         </Toolbar>
       </Container>
